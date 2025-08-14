@@ -1,78 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Management Project Q2</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f9; color: #333; }
-        h1 { color: #2c3e50; }
-        pre { background: #eaeaea; padding: 10px; border-radius: 5px; }
-        .query-section { margin-bottom: 20px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management Project Q2</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Student Management Project Q2</h1>
-
-    <div class="query-section">
-        <h2>A. Get all the information of all Students</h2>
-        <pre>
-SELECT * FROM Students;
-
--- Results:
-StudentId | Name    | City       | CourseId
-1         | Kasun   | Kandy      | 2
-2         | Daniel  | Jaffna     | 3
-3         | Hansi   | Colombo    | 1
-4         | Ranidu  | Matara     | 3
-5         | Praneeth| Kandy      | 4
-6         | Nuwani  | Rathnapura | 1
-        </pre>
-    </div>
-
-    <div class="query-section">
-        <h2>B. Select student id, name and city from students who are from the ‘Kandy’</h2>
-        <pre>
-SELECT StudentId, Name, City 
-FROM Students 
-WHERE City='Kandy';
-
--- Results:
-StudentId | Name    | City
-1         | Kasun   | Kandy
-5         | Praneeth| Kandy
-        </pre>
-    </div>
-
-    <div class="query-section">
-        <h2>C. Update the City as 'Galle' of the student whose id equals to 4</h2>
-        <pre>
-UPDATE Students
-SET City='Galle'
-WHERE StudentId=4;
-
--- Result:
--- 1 row affected
-        </pre>
-    </div>
-
-    <div class="query-section">
-        <h2>D. Get all the information of all students with their course names</h2>
-        <pre>
-SELECT s.StudentId, s.Name, s.City, c.Name AS CourseName
-FROM Students s
-JOIN Courses c ON s.CourseId = c.CourseId;
-
--- Results:
-StudentId | Name    | City      | CourseName
-1         | Kasun   | Kandy     | Graphic Design
-2         | Daniel  | Jaffna    | Mobile App Development
-3         | Hansi   | Colombo   | Web Development
-4         | Ranidu  | Matara    | Mobile App Development
-5         | Praneeth| Kandy     | Java
-6         | Nuwani  | Rathnapura| Web Development
-        </pre>
-    </div>
-
+  <h1>Student Management Project Q2</h1>
+  <p>Click the links below to view tables and SQL queries:</p>
+  <ul>
+    <li><a href="students.html">Students Table</a></li>
+    <li><a href="courses.html">Courses Table</a></li>
+    <li><a href="queries.html">SQL Queries & Results</a></li>
+  </ul>
 </body>
 </html>

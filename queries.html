@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Queries & Results</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>SQL Queries & Results</h1>
+  <pre>
+-- A. Get all the information of all Students.
+SELECT * FROM Students;
+
+-- B. Select student id, name and city from students who are from 'Kandy'.
+SELECT StudentId, Name, City FROM Students WHERE City='Kandy';
+
+-- C. Update the City as 'Galle' of the student whose id equals to 4.
+UPDATE Students SET City='Galle' WHERE StudentId=4;
+
+-- D. Get all the information of all students with their course names.
+SELECT s.StudentId, s.Name, s.City, c.Name AS CourseName
+FROM Students s
+JOIN Courses c ON s.CourseId = c.CourseId;
+  </pre>
+</body>
+</html>
