@@ -6,7 +6,60 @@
     <title>Student Management Q2</title>
 </head>
 <body>
-    <h1>Welcome to Student Management Project Q2</h1>
-    <p>This page is hosted using GitHub Pages.</p>
+    <h1>Student Management Project - Q2</h1>
+
+    <h2>A. Get all the information of all Students</h2>
+    <pre>
+SELECT * FROM Students;
+
+Result:
+StudentId | Name    | City       | CourseId
+-------------------------------------------
+1         | Kasun   | Kandy      | 2
+2         | Daniel  | Jaffna     | 3
+3         | Hansi   | Colombo    | 1
+4         | Ranidu  | Matara     | 3
+5         | Praneeth| Kandy      | 4
+6         | Nuwani  | Rathnapura | 1
+    </pre>
+
+    <h2>B. Select student id, name and city from students who are from 'Kandy'</h2>
+    <pre>
+SELECT StudentId, Name, City FROM Students WHERE City='Kandy';
+
+Result:
+StudentId | Name      | City
+-----------------------------
+1         | Kasun     | Kandy
+5         | Praneeth  | Kandy
+    </pre>
+
+    <h2>C. Update the City as 'Galle' of the student whose id equals 4</h2>
+    <pre>
+UPDATE Students SET City='Galle' WHERE StudentId=4;
+
+Result:
+-- After update:
+StudentId | Name   | City  | CourseId
+--------------------------------------
+4         | Ranidu | Galle | 3
+    </pre>
+
+    <h2>D. Get all the information of all students with their course names</h2>
+    <pre>
+SELECT s.StudentId, s.Name, s.City, c.Name AS CourseName
+FROM Students s
+JOIN Courses c ON s.CourseId = c.CourseId;
+
+Result:
+StudentId | Name      | City       | CourseName
+-----------------------------------------------
+1         | Kasun     | Kandy      | Graphic Design
+2         | Daniel    | Jaffna     | Mobile App Development
+3         | Hansi     | Colombo    | Web Development
+4         | Ranidu    | Matara     | Mobile App Development
+5         | Praneeth  | Kandy      | Java
+6         | Nuwani    | Rathnapura | Web Development
+    </pre>
 </body>
 </html>
