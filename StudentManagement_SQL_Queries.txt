@@ -1,0 +1,67 @@
+StudentManagement - SQL Queries and Results
+
+A. Get all the information of all Students
+
+Query:
+SELECT * FROM Students;
+
+Result:
+StudentId | Name      | City        | CourseId
+----------------------------------------------
+1         | Kasun     | Kandy       | 2
+2         | Daniel    | Jaffna      | 3
+3         | Hansi     | Colombo     | 1
+4         | Ranidu    | Matara      | 3
+5         | Praneeth  | Kandy       | 4
+6         | Nuwani    | Rathnapura  | 1
+
+
+B. Select student id, name and city from students who are from the ‘Kandy’
+
+Query:
+SELECT StudentId, Name, City 
+FROM Students 
+WHERE City = 'Kandy';
+
+Result:
+StudentId | Name      | City
+-----------------------------
+1         | Kasun     | Kandy
+5         | Praneeth  | Kandy
+
+
+C. Update the City as 'Galle' of the student whose id equals to 4
+
+Query:
+UPDATE Students
+SET City = 'Galle'
+WHERE StudentId = 4;
+
+Result:
+(After running SELECT * FROM Students; again)
+StudentId | Name      | City        | CourseId
+----------------------------------------------
+1         | Kasun     | Kandy       | 2
+2         | Daniel    | Jaffna      | 3
+3         | Hansi     | Colombo     | 1
+4         | Ranidu    | Galle       | 3
+5         | Praneeth  | Kandy       | 4
+6         | Nuwani    | Rathnapura  | 1
+
+
+D. Get all the information of all students with their course names
+
+Query:
+SELECT s.StudentId, s.Name, s.City, c.Name AS CourseName, c.LectureName
+FROM Students s
+JOIN Courses c ON s.CourseId = c.CourseId;
+
+Result:
+StudentId | Name      | City        | CourseName              | LectureName
+---------------------------------------------------------------------------
+1         | Kasun     | Kandy       | Graphic Design          | Piyasena
+2         | Daniel    | Jaffna      | Mobile App Development  | Dias
+3         | Hansi     | Colombo     | Web Development         | M.M Herat
+4         | Ranidu    | Galle       | Mobile App Development  | Dias
+5         | Praneeth  | Kandy       | Java                    | Perera
+6         | Nuwani    | Rathnapura  | Web Development         | M.M Herat
