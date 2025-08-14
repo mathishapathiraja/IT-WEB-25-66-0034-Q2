@@ -1,0 +1,19 @@
+﻿# Visual Studio temporary files
+.vs/
+
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Database files
+*.mdf
+*.ldf
+
+# Logs
+*.log
